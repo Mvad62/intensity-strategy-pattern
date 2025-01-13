@@ -35,6 +35,6 @@ public class App {
 
         System.out.println("Клиент " + order.getContactFio() + " при оформлении заказа выбрал способ оплаты '" + order.getPaymentMethod().getDescription() + "'");
 
-        new PaymentService().receivePayment(order);
+        new PaymentService().receivePayment();
     }
 }

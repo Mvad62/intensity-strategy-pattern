@@ -1,10 +1,8 @@
 package ru.liga.strategy.service;
 
-import ru.liga.strategy.model.Order;
-
 public class PaymentService {
 
-    public void receivePayment(Order order) {
+    public void receivePayment() {
         sendCourier();
         receiveCash();
         backToStore();
