@@ -19,7 +19,7 @@ public class App {
         Order order = Order.builder()
                 .contactFio("Иванов Иван")
                 .contactPhone("+79151234567")
-                .paymentMethod(PaymentMethod.CASH)
+                .paymentMethod(PaymentMethod.CARD)
                 .goods(List.of(
                         Good.builder()
                                 .name("Смартфон Apple iPhone")
@@ -35,6 +35,10 @@ public class App {
 
         System.out.println("Клиент " + order.getContactFio() + " при оформлении заказа выбрал способ оплаты '" + order.getPaymentMethod().getDescription() + "'");
 
-        new PaymentService().receivePayment();
+        try {
+            new PaymentService().receivePayment(order);
+        } catch (Exception e) {
+            System.out.println("Ошибка при обработке оплаты: " + e.getMessage());
+        }
     }
 }
