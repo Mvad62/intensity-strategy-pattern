@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum PaymentMethod {
 
-    CASH("наличными");
+    CASH("наличными"),
+    CARD("картой"),
+    BANK("безналичный перевод");
 
     private final String description;
 }
